@@ -1,0 +1,299 @@
+---
+title: "ETC5512: Assignment 4"
+author: "Thuy Ngo" 
+format: 
+  html:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = TRUE, 
+                      message = TRUE) 
+```
+
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(sf)
+library(readxl)
+library(janitor)
+library(readr)
+```
+
+# Data collection
+
+- Victoria Crime Statistics: <https://www.crimestatistics.vic.gov.au/crime-statistics/latest-victorian-crime-data/download-data>
+    - LGA Recorded Offences Year Ending December 2024 
+    - LGA Criminal Incidents Year Ending December 2024
+- Population: G01 Geopackage
+- Annual growth rate of population: <https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release#data-downloads>
+    - Get population in 2024 to calculate growth rate -> Apply that to census data
+- Median rent: G02 Geopackage
+
+```{r import-cencus-rent-population}
+#| cache: TRUE
+
+geopath_2021_G02 <- here::here("data/raw/Geopackage_2021_G02_VIC_GDA2020/G02_VIC_GDA2020.gpkg")
+st_layers(geopath_2021_G02)
+
+median_rent <- read_sf(geopath_2021_G02, layer = "G02_SAL_2021_VIC") |> 
+    select(SAL_CODE_2021, SAL_NAME_2021, Median_rent_weekly, geom) |> 
+    clean_names() |> 
+    filter(!(sal_code_2021 %in% c("SAL29494", "SAL29797")))
+
+geopath_2021_G01 <- here::here("data/raw/Geopackage_2021_G01_VIC_GDA2020/G01_VIC_GDA2020.gpkg")
+population <- read_sf(geopath_2021_G01, layer = "G01_SAL_2021_VIC") |> 
+    select(SAL_CODE_2021, SAL_NAME_2021, Tot_P_M, Tot_P_F, Tot_P_P, geom) |> 
+    clean_names() |> 
+    filter(!(sal_code_2021 %in% c("SAL29494", "SAL29797")))
+
+```
+
+```{r import-abs-cpi}
+#| cache: TRUE
+
+cpi <- read_excel(here::here("data/raw/abs-cpi-by-capital city.xlsx"), 
+                sheet = "Data1", skip = 9) |> 
+        select(`Series ID`, A2331841F) |> 
+        rename(period = `Series ID`, rent_cpi = A2331841F)
+
+```
+
+```{r import-csa-data}
+#| cache: TRUE 
+
+incidents <- read_excel("data/raw/Data_Tables_LGA_Criminal_Incidents_Year_Ending_December_2024.xlsx", sheet = "Table 03") |> clean_names()
+
+offences <- read_excel("data/raw/Data_Tables_LGA_Recorded_Offences_Year_Ending_December_2024.xlsx", sheet = "Table 03") |> clean_names()
+
+harm_level <- read_tsv("data/raw/harm_category.csv", locale = locale(encoding = "UTF-16LE")) |> clean_names() |> 
+    select(-key_elements, -x4)
+```
+
+```{r}
+# Original named list
+metro_lga_regions <- list(
+  "Inner Metro Region" = c("Melbourne", "Port Phillip", "Yarra"),
+  "Inner South East Region" = c("Stonnington", "Bayside", "Boroondara", "Glen Eira"),
+  "Western Region" = c("Melton", "Brimbank", "Hobsons Bay", "Wyndham", "Moonee Valley", "Maribyrnong"),
+  "Northern Region" = c("Banyule", "Whittlesea", "Nillumbik", "Hume", "Moreland", "Darebin", "Mitchell"),
+  "Eastern Region" = c("Manningham", "Whitehorse", "Knox", "Yarra Ranges", "Maroondah", "Monash"),
+  "Southern Region" = c("Kingston", "Frankston", "Cardinia", "Casey", "Greater Dandenong", "Mornington Peninsula")
+)
+
+# Convert to dataframe
+metro_lga<- enframe(metro_lga_regions, name = "region", value = "lga") |>
+  unnest(cols = lga)
+```
+
+# Data transformation
+
+## Harmonize suburb name between census and CSA
+```{r list of extend and duplicated suburb}
+# List of duplicated suburbs (different suburbs with same name but different LGA)
+duplicated_suburb <- median_rent |>
+    st_drop_geometry() |> 
+    distinct(sal_code_2021, sal_name_2021) |> 
+    mutate(suburb_base_name = str_remove(sal_name_2021, " \\(.*Vic\\.\\)"),
+        lga = str_extract(sal_name_2021, "(?<=\\().+(?= - Vic\\.)"),
+        is_duplicated = suburb_base_name %in% suburb_base_name[duplicated(suburb_base_name)],
+        suburb_full_name = ifelse(
+            is_duplicated,
+            str_remove(sal_name_2021, " - Vic\\."),
+            str_remove(sal_name_2021, "\\s*\\(.*\\)")
+        ) |> str_trim())
+
+# List of extend suburbs (the same suburb but extend to more than 1 LGA)
+extend_suburb <- bind_rows(incidents, offences) |> 
+    distinct(local_government_area, suburb_town_name) |> 
+    mutate(
+        across(c("suburb_town_name", "local_government_area"), ~str_trim(.x)),
+        suburb_lga_paste = paste0(suburb_town_name, " (", local_government_area, ")")) |> 
+    left_join(duplicated_suburb, by = c("suburb_lga_paste" = "suburb_full_name")) |> 
+    filter(is.na(is_duplicated)) |>
+    mutate(is_extend = suburb_town_name %in% suburb_town_name[duplicated(suburb_town_name)]) |> 
+    select(local_government_area, suburb_town_name, is_extend)
+
+suburb_lga_dict <- duplicated_suburb |> 
+    filter(!is_duplicated) |> 
+    left_join(extend_suburb, by = c("suburb_base_name" = "suburb_town_name")) |> 
+    bind_rows(duplicated_suburb |> filter(is_duplicated)) |> 
+    mutate(lga = coalesce(lga, local_government_area)) |> 
+    select(-local_government_area) |> 
+    left_join(median_rent |> select(sal_code_2021, geom), by = "sal_code_2021") |> 
+    left_join(metro_lga, by = "lga") |> 
+    mutate(region = coalesce(region, "Regional"))
+```
+
+## Estimate population in 2024 by suburb
+
+ ```{r est-pop-by-suburb}
+ 
+vic_pop_2024 <- 7012962
+vic_pop_2021 <- 6566092
+cencus_pop <- sum(population$tot_p_p)
+
+pop_growth_rate <- (vic_pop_2024/cencus_pop)-1
+
+est_pop <- population |> 
+    mutate(across(c("tot_p_m", "tot_p_f", "tot_p_p"), ~round(.x*(1+pop_growth_rate))))
+ ```
+
+
+## Estimate median rent in 2024 by suburb
+
+```{r}
+cpi_2021 <- cpi |> 
+    filter(period == ymd("2021-12-01")) |> select(rent_cpi) |> pull()
+
+cpi_2024 <- cpi |> 
+    filter(period == ymd("2024-12-01")) |> select(rent_cpi) |> pull()
+
+est_median_rent <- median_rent |>
+    mutate(median_rent_weekly = round(median_rent_weekly*cpi_2024/cpi_2021))
+```
+
+
+## Crime rate
+
+Follow the formula defined by CSA:
+
+- Offence rate = (Offence count/ERP count) *100000
+- Criminal incident rate = (Criminal incident count/ERP count) *100000
+
+```{r sum offence and incidents}
+
+incidents_per_suburb <- incidents |> 
+    filter(year == 2024) |> 
+    left_join(suburb_lga_dict, by = c("local_government_area" = "lga", "suburb_town_name" = "suburb_base_name")) |>
+    group_by(suburb_full_name) |> 
+    summarise(incident_counts = sum(incidents_recorded))
+
+offences_per_suburb <- offences |> 
+    filter(year == 2024) |> 
+    left_join(suburb_lga_dict, by = c("local_government_area" = "lga", "suburb_town_name" = "suburb_base_name")) |>
+    group_by(suburb_full_name) |> 
+    summarise(offence_counts = sum(offence_count))
+```
+
+```{r combine-with-census}
+census_csa <- est_median_rent |> 
+    st_drop_geometry() |> 
+    left_join(est_pop, by = c("sal_name_2021", "sal_code_2021")) |> 
+    left_join(suburb_lga_dict |> distinct(sal_code_2021, suburb_full_name, region), 
+        by = "sal_code_2021") |> 
+    left_join(incidents_per_suburb, by = "suburb_full_name") |> 
+    left_join(offences_per_suburb, by = "suburb_full_name") |> 
+    mutate(incident_counts = coalesce(incident_counts, 0),
+           offence_counts = coalesce(offence_counts, 0),
+           offence_rate = offence_counts/tot_p_p*100,
+           incident_rate = incident_counts/tot_p_p*100)
+
+#write_csv(census_csa, here::here("data/processed/census_csa.csv"))
+```
+
+### Offence type and Harm level
+```{r}
+
+offence_harm_level <- harm_level |>
+  rename(offence_subgroup = crime_offence_groups_included_in_category) |>
+  mutate(category = factor(category, c("High Harm", "Medium Harm", "Low Harm"))) |>
+  right_join(offences, by = "offence_subgroup") |> 
+  left_join(suburb_lga_dict, by = c("local_government_area" = "lga", "suburb_town_name" = "suburb_base_name")) |> 
+  select(year, category, offence_subgroup, offence_division, offence_subdivision, offence_count, sal_code_2021, suburb_full_name, geom)
+
+agg_offence_suburb <- offence_harm_level |>
+  group_by(year, suburb_full_name, offence_subdivision, category) |> 
+  summarise(offence_counts = sum(offence_count)) |> 
+  ungroup()
+
+agg_offence_suburb |>
+    filter(is.na(category))
+```
+
+## Region boundary
+```{r}
+census_csa <- st_as_sf(census_csa, sf_column_name = "geom")
+
+region_boundary <- census_csa |> 
+    group_by(region) |>
+    summarise(region_geom = st_union(geom))
+```
+
+# Data visualization
+
+## Visualize suburb median rent on map
+
+```{r}
+census_csa |> 
+    filter(region != "Regional", median_rent_weekly <= 1500) |>
+    ggplot() +
+    geom_sf(aes(fill = median_rent_weekly), color = "black") +
+    geom_sf(data = region_boundary |> filter(region != "Regional"), fill = NA, color = "blue", linewidth = 0.5) +
+    scale_fill_viridis_c(option = "B", direction = -1) +
+    theme_void() +
+    labs(fill = "Median rent (weekly)")
+```
+
+```{r}
+# Distribution of median rent
+census_csa |> 
+    filter(region != "Regional") |>
+    ggplot() +
+    geom_histogram(aes(median_rent_weekly), bins = 100) +
+    labs(title = "Distribution of median rent")
+
+census_csa |>
+    arrange(desc(median_rent_weekly)) |> View()
+```
+
+```{r}
+# Map population
+census_csa |> 
+    filter(tot_p_p >= 2000) |>
+    ggplot() +
+    geom_sf(aes(fill = tot_p_p), color = "black") +
+    scale_fill_viridis_c(option = "B", direction = -1) +
+    labs(fill = "Population")
+```
+
+```{r}
+# Map incident rate
+census_csa |>
+    filter(incident_rate < 40, region != "Regional") |>
+    ggplot() +
+    geom_sf(aes(fill = incident_rate), color = "black") +
+    geom_sf(data = region_boundary |> filter(region != "Regional"), fill = NA, color = "blue", linewidth = 0.5) +
+    scale_fill_viridis_c(option = "B", direction = -1) +
+    theme_void() +
+    labs(fill = "Incident rate")
+```
+
+```{r}
+# Histogram of incident and offence rate
+census_csa |> 
+    ggplot() +
+    geom_boxplot(aes(y = incident_rate), bins = 100) +
+    labs(title = "Distribution of incident rate")
+```
+
+```{r}
+# Scatter plot of median rent and incident rate
+census_csa |> 
+    filter(region != "Regional") |>
+    ggplot(aes(x = median_rent_weekly, y = incident_rate)) +
+    geom_point(aes(color = region), alpha = 0.5) +
+    labs(title = "Scatter plot of median rent and incident rate")
+```
+
+```{r}
+census_csa |> 
+    filter(region != "Regional", incident_rate < 40) |>
+    ggplot(aes(x = median_rent_weekly, y = incident_rate)) +
+    geom_point(aes(color = region), alpha = 0.5) +
+    labs(title = "Scatter plot of median rent and incident rate") + 
+    facet_wrap(~region)
+```

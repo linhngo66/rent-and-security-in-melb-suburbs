@@ -1,0 +1,174 @@
+---
+title: "ETC5512: Assignment 4"
+author: "Thuy Ngo" 
+format: 
+  html:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE, 
+                      message = FALSE) 
+```
+
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(sf)
+library(readxl)
+library(janitor)
+```
+
+# Data collection
+
+- Victoria Crime Statistics: <https://www.crimestatistics.vic.gov.au/crime-statistics/latest-victorian-crime-data/download-data>
+    - LGA Recorded Offences Year Ending December 2024 
+    - LGA Criminal Incidents Year Ending December 2024
+- Population: G01 Geopackage
+- Annual growth rate of population: <https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release#data-downloads>
+    - Get population in 2024 to calculate growth rate -> Apply that to census data
+- Median rent: G02 Geopackage
+
+# Data processing
+
+## Median rent by suburb
+
+```{r}
+geopath_2021_G02 <- here::here("data/raw/Geopackage_2021_G02_VIC_GDA2020/G02_VIC_GDA2020.gpkg")
+st_layers(geopath_2021_G02)
+
+median_rent <- read_sf(geopath_2021_G02, layer = "G02_SAL_2021_VIC") |> 
+    select(SAL_CODE_2021, SAL_NAME_2021, Median_rent_weekly, geom) |> 
+    clean_names()
+```
+
+## Population by suburb
+
+ ```{r}
+geopath_2021_G01 <- here::here("data/raw/Geopackage_2021_G01_VIC_GDA2020/G01_VIC_GDA2020.gpkg")
+population <- read_sf(geopath_2021_G01, layer = "G01_SAL_2021_VIC") |> 
+    select(SAL_CODE_2021, SAL_NAME_2021, Tot_P_M, Tot_P_F, Tot_P_P, geom) |> 
+    clean_names()
+ ```
+
+ ```{r}
+vic_pop_2024 <- 7012962
+vic_pop_2021 <- 6566092
+cencus_pop <- sum(population$tot_p_p)
+
+pop_growth_rate <- (vic_pop_2024/cencus_pop)-1
+
+est_pop <- population |> 
+    mutate(across(c("tot_p_m", "tot_p_f", "tot_p_p"), ~round(.x*(1+pop_growth_rate))))
+ ```
+
+```{r handling suburb name}
+joined_pop_rent <- median_rent |> 
+    st_drop_geometry() |> 
+    left_join(est_pop, by = c("sal_name_2021", "sal_code_2021")) |> 
+    mutate(
+    local_government_area = ifelse(
+        str_detect(sal_name_2021, " - Vic\\.\\)"),
+        str_extract(sal_name_2021, "(?<=\\().+?(?= - Vic\\.)") |> str_to_upper(),
+        NA_character_), # Extract LGA only if it contains ' - VIC.)'
+    suburb_town_name = str_trim(str_remove(sal_name_2021, "\\s*\\(.*\\)")) |> str_to_upper()) |> # Remove anything inside brackets including the brackets
+    select(-sal_name_2021)
+```
+
+## Crime statistics
+
+```{r}
+incidents <- read_excel("data/raw/Data_Tables_LGA_Criminal_Incidents_Year_Ending_December_2024.xlsx", sheet = "Table 03") |> clean_names()
+offences <- read_excel("data/raw/Data_Tables_LGA_Recorded_Offences_Year_Ending_December_2024.xlsx", sheet = "Table 03") |> clean_names()
+```
+
+Offence rate = (Offence count/ERP count) *100,000
+Criminal incident rate = (Criminal incident count/ERP count) *100,000
+
+```{r sum offence and incidents}
+incidents_per_suburb <- incidents |> 
+    filter(year == 2024) |> 
+    mutate(across(c("suburb_town_name", "local_government_area"), ~str_to_upper(.x))) |> 
+    group_by(local_government_area, suburb_town_name) |> 
+    summarise(incident_counts = sum(incidents_recorded))
+
+offences_per_suburb <- offences |> 
+    filter(year == 2024) |> 
+    mutate(across(c("suburb_town_name", "local_government_area"), ~str_to_upper(.x))) |> 
+    group_by(local_government_area, suburb_town_name) |> 
+    summarise(offence_counts = sum(offence_count))
+```
+
+
+```{r check if unique suburb in census data is actually unique in VCS}
+# Get unique combination of LGA and suburb from incidents and offences
+lga_suburb <- bind_rows(incidents_per_suburb, offences_per_suburb) |> 
+    distinct(local_government_area, suburb_town_name)
+
+# Get list of suburb from median rent
+suburb_list <- joined_pop_rent |> 
+    distinct(suburb_town_name) |> 
+    pull(suburb_town_name)
+
+# Count how many times each suburb appear in lga_suburb
+count_suburb <- lga_suburb |> 
+    count(local_government_area, suburb_town_name) |> 
+    rename(count = n) |> 
+    left_join(lga_suburb, by = c("local_government_area", "suburb_town_name")) |> 
+    mutate(count = ifelse(is.na(count), 0, count))
+```
+
+
+```{r}
+# Separate joined_pop_rent into two dataframes of NA lga and non-NA lga
+unique_suburb <- joined_pop_rent |> 
+    filter(is.na(local_government_area))
+
+non_unique_suburb <- joined_pop_rent |> 
+    filter(!is.na(local_government_area))
+
+# Join non_unique_suburb with incidents_per_suburb
+non_unique_suburb_merged <- non_unique_suburb |>
+    left_join(incidents_per_suburb, by = c("suburb_town_name", "local_government_area")) |> 
+    left_join(offences_per_suburb, by = c("suburb_town_name", "local_government_area"))
+
+# Join unique_suburb with incidents_per_suburb
+unique_suburb_merged <- unique_suburb |>
+    left_join(incidents_per_suburb, by = c("suburb_town_name")) |> 
+    left_join(offences_per_suburb, by = c("suburb_town_name", "local_government_area.y" = "local_government_area"))
+```
+
+
+```{r find duplicated suburb in unique_suburb_merged}
+# Find duplicated suburb in unique_suburb_merged
+duplicated_suburb <- unique_suburb_merged |>
+    group_by(suburb_town_name) |>
+    summarise(count = n()) |> 
+    filter(count > 1) |> 
+    pull(suburb_town_name)
+
+unique_suburb_merged |>
+    filter(suburb_town_name %in% duplicated_suburb) |> 
+    View()
+```
+
+
+```{r sum incidents and offences for duplicated suburb}
+# all duplicated suburb in unique_suburb_merged extend to more than 1 LGA
+# so we need to sum incidents and offences for each LGA
+
+group_col <- c("sal_code_2021", "median_rent_weekly", "tot_p_m", "tot_p_f", "tot_p_p", "geom", "local_government_area", "suburb_town_name")
+
+unique_suburb_merged |> 
+  select(-local_government_area.x) |>
+  rename(local_government_area = local_government_area.y) |>
+  group_by(across(all_of(group_col))) |>
+  summarise(
+    incidents = sum(incident_counts, na.rm = TRUE),
+    offences = sum(offence_counts, na.rm = TRUE),
+    .groups = "drop") |> 
+    bind_rows(non_unique_suburb_merged)
+```

@@ -8,7 +8,11 @@ bibliography: citations/citations.bib
 csl: citations/apa.csl
 ---
 
+
+
 :::{.panel-tabset}
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE, 
@@ -28,6 +32,8 @@ library(kableExtra)
 library(knitr)
 ```
 
+
+
 # Data details
 
 ## Question 1
@@ -35,6 +41,8 @@ library(knitr)
 My question is that: Is there any correlation between rent price and level of security across suburbs in Melbourne?
 
 ## Question 2 - Data collection
+
+
 
 ```{r}
 #| label: tbl-data-collection
@@ -57,6 +65,8 @@ basic_metadata <- tribble(
 
 kable(basic_metadata, align = "l")
 ```
+
+
 
 @tbl-data-collection summarizes data I collected for this analysis. There are three key data points I need for this analysis, namely rent price by suburb, crime rate by surburb and geospatail boundary of each suburb.
 
@@ -179,6 +189,8 @@ Therefore, where duplications among extended suburbs happen, I keep the first en
 ## Question 4 - Data transformation
 
 **Import data**
+
+
 ```{r import-cencus-rent-population-model}
 #| eval: false
 #| echo: true
@@ -265,7 +277,11 @@ metro_lga<- enframe(metro_lga_regions, name = "region", value = "lga") |>
 #write_csv(metro_lga, "data/processed/metro-lga.csv")
 ```
 
+
+
 **Harmonize suburb name between census and CSA**
+
+
 ```{r suburb-dict}
 #| echo: true
 
@@ -307,7 +323,11 @@ suburb_lga_dict <- duplicated_suburb |>
 #write_csv(suburb_lga_dict, "data/processed/suburb-lga-dict.csv")
 ```
 
+
+
 **Estimate population in 2024 by suburb**
+
+
 ```{r est-pop-by-suburb}
  #| echo: true
 
@@ -322,7 +342,11 @@ est_pop <- population |>
     mutate(across(c("tot_p_m", "tot_p_f", "tot_p_p"), ~round(.x*(1+pop_growth_rate))))
 ```
 
+
+
 **Estimate median rent in 2024 by suburb**
+
+
 ```{r est-rent}
 #| echo: true
 
@@ -336,7 +360,11 @@ est_median_rent <- median_rent |>
     mutate(median_rent_weekly = round(median_rent_weekly*cpi_2024/cpi_2021))
 ```
 
+
+
 **Calculate crime rate**
+
+
 ```{r sum-incidents}
 #| echo: true
 
@@ -370,7 +398,11 @@ census_csa_metro <- census_csa |>
 #st_write(census_csa_metro, "data/processed/census-csa-metro.gpkg", delete_dsn = TRUE)
 ```
 
+
+
 **Merge Suburb boundary to Region boundary**
+
+
 ```{r region-boundary}
 #| echo: true
 
@@ -380,6 +412,8 @@ region_boundary <- census_csa_metro |>
 
 #st_write(region_boundary, "data/processed/region-boundary.gpkg", delete_dsn = TRUE)
 ```
+
+
 
 # Blog post
 
@@ -416,6 +450,8 @@ Before investigating the relationship between rent and security, let's have a lo
 
 ### Median weekly rent across Melbourne
 
+
+
 ```{r}
 # Map median rent
 census_csa_metro |> 
@@ -437,9 +473,13 @@ census_csa_metro |>
     fill = "Median weekly rent")
 ```
 
+
+
 It is surprising to me that the difference in rent across Melbourne is quite subtle, and there are few areas with outstandingly high rent.
 
 However, there still exists the inner and outer contrast, such that as distance from the CBD increases, especially towards northwest, northeast and southeast, the median weekly rent drops. Notably, the Western and further Northen and Southern regions are more affordable compared to the Inner South East and parts of Eastern closer to CBD. These areas are home to some of the most wealthiest population in Melbourne (e.g., Brighton, Toorak, Canterbury, Balwyn, etc.)
+
+
 
 ```{r}
 region_colors <- c(
@@ -511,11 +551,15 @@ census_csa_metro |>
   expand_limits(y = max(census_csa_metro$median_rent_weekly) * 0.25)
 ```
 
+
+
 If we take a closer look at top 20 suburbs with the highest and lowest median rent, the result is consistent with the color distribution on the map. Most surburbs in the highest 20 group are from the CBD and Inner South East, while Western suburbs dominate the lowest 20 group.
 
 ### Crime rate across Melbourne
 
 I define crime rate as annual incident rate per 100 residents. 
+
+
 
 ```{r}
 #| label: fig-incident-rate-map
@@ -540,7 +584,11 @@ census_csa_metro |>
     fill = "Incident Rate\n(per 100 residents)")
 ```
 
+
+
 @fig-incident-rate-map shows the incident rate in each suburb in Melbourne, with the blue border separating regions. Overall, the outer areas of all region seem to have a similar range of low incident rate, with a few outliers concentrating in the Western region. However, it is hard to see how secured the central areas in this plot because it is too small. So, let's zoom in a bit.
+
+
 
 ```{r}
 #| label: fig-incident-rate-map-zoomed
@@ -565,9 +613,13 @@ census_csa_metro |>
     fill = "Incident Rate\n(per 100 residents)")
 ```
 
+
+
 The CBD has the highest crime rate, with incident rates of all suburbs uniformly staying at the higher end. This is understandable as CBD is the center of commercial activities happen, and generally speaking, areas with a lot of people and activities are bound to have more incidents. 
 
 We can also see a difference between the West and the East here. The West has a slightly deeper color, meaning that there are more crimes there, compared to the East. 
+
+
 
 ```{r}
 #| label: fig-top-incident
@@ -602,6 +654,8 @@ census_csa_metro |>
   expand_limits(y = max(census_csa_metro$incident_rate) * 2)
 ```
 
+
+
 Note that there are a few outliers with significantly higher incident rate. These are mostly industrial or commercial areas, with little residents but high volumes of daytime activities, inflating the crime rate. For example, Somerton, Tottenham, Laverton North are all predominantly industrial, and Essendon Fields, Melbourne Airport and Moorabin Airport are transport hubs.
 
 ### Rent VS Crime rate
@@ -609,6 +663,8 @@ Note that there are a few outliers with significantly higher incident rate. Thes
 From what we have seen, my initial hunch was that there was a small correlation between rent and crime rate, except for the CBD. Areas with the higher rent like Inner South East and Eastern regions happen to have lower incident rate as seen in @fig-incident-rate-map-zoomed.
 
 However, to my surprise, there is no correlation in any of the region!
+
+
 
 ```{r}
 # Scatter plot of median rent and incident rate
@@ -628,6 +684,8 @@ census_csa_metro |>
 
 ```
 
+
+
 The majority of suburbs fall into the median weekly rent and median incident rate range for their respective region. And the points are distributed vertically across the incident rate, independent of median weekly rent.
 
 ### Suburb recommendation for students at Monash Clayton
@@ -635,6 +693,8 @@ The majority of suburbs fall into the median weekly rent and median incident rat
 If there is no correlation between rent and security, why bother making a recommendation based on rent and security? It is because if budget is not a restriction for security, we'd better find an affordable and secured suburb to live in!
 
 I narrowed my analysis down to suburbs close to Clayton campus, as recommended on Monash website [@clayton]. I also added Caulfield because the commute from Caulfield and Clayton is very convenient, and it is a greater suburb to stay in if you want to enjoy a bit of student life. 
+
+
 
 ```{r}
 #| label: fig-monash-recc
@@ -653,6 +713,8 @@ census_csa_metro |>
     x = "Median weekly rent",
     y = "Incident rate")
 ```
+
+
 
 Based on @fig-monash-recc, I think the best options that balance rent and security are Notting Hill, Clayton South, Clayton and Huntingdale. These suburbs offer good price and incident rate on the lower side. If your budget can stretch a bit more, Glen Waverley, Mount Waverley and Caulfield are great options for security. In my opinion, these suburbs have a lot more happening, hence, more fun to live in as well. Despite reasonable price, you might want to avoid Springvale and Oakleigh due to higher incident rate.
 

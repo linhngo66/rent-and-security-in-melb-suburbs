@@ -50,6 +50,7 @@ This analysis uses publicly available datasets from the following sources:
 │       ├── metro-lga.csv                      # Map LGAs to their metropolitan region
 │       ├── region-boundary.gpkg               # Geospatial of metropolitan regions     
 │       └── suburb-lga-dict.csv                # Dictionary of suburb and LGA
+├── previous_versions                          # 4 previous versions of the report
 ├── assignment4_35776064.qmd                   # Main report
 ├── Assignment 4.Rproj
 └── README.md                                  # Project documentation  
