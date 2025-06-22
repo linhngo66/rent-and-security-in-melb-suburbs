@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 .DS_store
+data/raw/Geopackage_2021_G01_VIC_GDA2020/
+data/raw/Geopackage_2021_G02_VIC_GDA2020/

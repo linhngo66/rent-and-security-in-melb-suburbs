@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Thuy Ngo">
+
+<title>Are we paying more rent for better security in Melbourne?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="assignment4_35776064_files/libs/clipboard/clipboard.min.js"></script>
+<script src="assignment4_35776064_files/libs/quarto-html/quarto.js"></script>
+<script src="assignment4_35776064_files/libs/quarto-html/popper.min.js"></script>
+<script src="assignment4_35776064_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="assignment4_35776064_files/libs/quarto-html/anchor.min.js"></script>
+<link href="assignment4_35776064_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="assignment4_35776064_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="assignment4_35776064_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="assignment4_35776064_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="assignment4_35776064_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+  
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Are we paying more rent for better security in Melbourne?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thuy Ngo </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Data details</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Blog post</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Behind the Scenes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>My question is that: Is there any correlation between rent price and level of security across suburbs in Melbourne?</p>
+</section>
+<section id="question-2---data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="question-2---data-collection">Question 2 - Data collection</h2>
+<div class="cell">
+<div id="tbl-data-collection" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data sources and respective objectives
+</figcaption>
+<div aria-describedby="tbl-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 31%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Objective</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2021 Census GeoPackages - G01</td>
+<td style="text-align: left;">ABS</td>
+<td style="text-align: left;">To collect Population of all suburbs in Melbourne. This is used to calculate incident rate per 100 residents</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2021 Census GeoPackages - G02</td>
+<td style="text-align: left;">ABS</td>
+<td style="text-align: left;">To collect Median weekly rent and Geospatial boundaries of all suburbs in Melbourne</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Recorded Criminal Incidents</td>
+<td style="text-align: left;">CSA</td>
+<td style="text-align: left;">To collect all criminal incidents recorded in Victoria. This is used to calculate incident rate per 100 residents</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consumer Price Index</td>
+<td style="text-align: left;">ABS</td>
+<td style="text-align: left;">To adjust 2021 Census Rent data by adding the percentage growth in CPI of rent in Melbourne between 2021 and 2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estimated Resident Population</td>
+<td style="text-align: left;">ABS</td>
+<td style="text-align: left;">To adjust 2021 Census Population data to 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metropolitan Melbourne regions and their local government areas</td>
+<td style="text-align: left;">The State of Victoria Department of Environment, Land, Water and Planning (DELWP)</td>
+<td style="text-align: left;">To visualize and compare data by regions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#tbl-data-collection" class="quarto-xref">Table&nbsp;1</a> summarizes data I collected for this analysis. There are three key data points I need for this analysis, namely rent price by suburb, crime rate by surburb and geospatail boundary of each suburb.</p>
+<p>I collected rent price data from 2021 Census GeoPackages - Table G02, where Median weekly rent is provided <span class="citation" data-cites="census">(<a href="#ref-census" role="doc-biblioref">2021a</a>)</span>. While there are more recent sources of rental prices available, they are either less comprehensive, often missing data on outer areas, or locked behind paywall. 2021 Census is the most complete data source on rental price with true open access. However, since my analysis is anchored in 2024, yet the data is from 2021, I need to adjust rent data using the 2021 and 2024 consumer-price index (CPI) provided by Australia Bureau of Statitistics <span class="citation" data-cites="abs_cpi">(<a href="#ref-abs_cpi" role="doc-biblioref">2025a</a>)</span>.</p>
+<p>To calculate the crime rate, defined as incident rate per 100 residents, I needed data on crimes and population in Melbourne. I collected data on all criminal incidents in 2024 from Victoria’s Crime Statistics Agency (CSA). CSA collects recorded crime from Victoria Police to process and release to the public every quarter, thus, is the most up-to-date and official data source on Victoria crimes. Regarding population data, I collected it from 2021 Census GeoPackages - Table G01 <span class="citation" data-cites="census">(<a href="#ref-census" role="doc-biblioref">2021a</a>)</span>. Similar to rental data, this data is from 2021, thus, needed adjusting by annual population growth rate, which is calculated from Estimated Resident Population (ERP) provided by ABS <span class="citation" data-cites="erp">(<a href="#ref-erp" role="doc-biblioref">2025b</a>)</span>.</p>
+<p>The 2021 Census GeoPackages also offer geospatial data on suburb level, called Suburbs and Localities (SALs). I use this data to visualize two key variables on a map.</p>
+<p>All data from ABS are licensed under Creative Commons Attribution 4.0 International licence, and data from CSA are licensed under Creative Commons Attribution 3.0 Australia license <span class="citation" data-cites="csa_copyright abs_privacy">(<a href="#ref-abs_privacy" role="doc-biblioref">2025c</a>; <a href="#ref-csa_copyright" role="doc-biblioref">n.d.-a</a>)</span></p>
+</section>
+<section id="question-3---methodology" class="level2">
+<h2 class="anchored" data-anchor-id="question-3---methodology">Question 3 - Methodology</h2>
+<p>The following data sets are collected and processed to analyse the correlation between rent and security across Melbourne suburbs. For details on the final processed data used for analysis, please refer to README.md and data-dictionary.csv.</p>
+<section id="data-description-collection-methodology-limitation-privacy-consideration" class="level3">
+<h3 class="anchored" data-anchor-id="data-description-collection-methodology-limitation-privacy-consideration">Data description: Collection methodology, Limitation, Privacy consideration</h3>
+<p>Below is an overview of all collected data sets, including their data type, data collection methodology, limitation and privacy consideration.</p>
+<p><strong>2021 Census GeoPackages - G01</strong></p>
+<ul>
+<li>Source: ABS<br>
+</li>
+<li>Data type: Census<br>
+</li>
+<li>Updated in: 2021<br>
+</li>
+<li>Latest version: 2021<br>
+</li>
+<li>Data collection methodology: Every five years, ABS collects information on population and housing from everyone in Australia. Everyone is asked to fill in a question regarding their age, country of birth, religion, housing and work, etc.<br>
+</li>
+<li>Data limitation: The data is collected in 2021, thus, does not reflect the latest population. To overcome this, I adjust it by adding percentage population growth between 2021 and 2024.<br>
+</li>
+<li>Data privacy and Ethics: This is aggregated data that ABS has transformed such that it is not easily re-identifiable. Privacy in the data collection process is practiced under several legislation, including Australian Privacy Principles, Privacy Act 1988, Census and Statistics Act 1905, etc. <span class="citation" data-cites="census_privacy">(<a href="#ref-census_privacy" role="doc-biblioref">2021b</a>)</span></li>
+</ul>
+<p><strong>2021 Census GeoPackages - G02</strong></p>
+<ul>
+<li>Source: ABS<br>
+</li>
+<li>Data type: Census<br>
+</li>
+<li>Updated in: 2021<br>
+</li>
+<li>Latest version: 2021<br>
+</li>
+<li>Data collection methodology:<br>
+Every five years, ABS collects information on population and housing from everyone in Australia. Everyone is asked to fill in a question regarding their age, country of birth, religion, housing and work, etc.<br>
+</li>
+<li>Data limitation:
+<ol type="1">
+<li>The data does not account for different types of rental properties and factors that impact rental prices, such as number of units, number of bedrooms, dwelling types, dwelling size, etc. Therefore, this analysis only treats this variable as a proxy for relative affordability across suburb, but not an absolute guide on rental prices.<br>
+</li>
+<li>The data is collected in 2021, thus, does not reflect the latest rental landscape. To overcome this, I adjust it by adding percentage growth in CPI between 2021 and 2024.<br>
+</li>
+</ol></li>
+<li>Data privacy and Ethics:<br>
+This is aggregated data that ABS has transformed such that it is not easily re-identifiable. Privacy in the data collection process is practiced under several legislation, including Australian Privacy Principles, Privacy Act 1988, Census and Statistics Act 1905, etc. <span class="citation" data-cites="census_privacy">(<a href="#ref-census_privacy" role="doc-biblioref">2021b</a>)</span></li>
+</ul>
+<p><strong>Recorded Criminal Incidents</strong></p>
+<ul>
+<li>Source: CSA<br>
+</li>
+<li>Data type: Occurrences<br>
+</li>
+<li>Updated in: Dec-24<br>
+</li>
+<li>Latest version: Mar-25<br>
+</li>
+<li>Data collection methodology:<br>
+Victoria Police records criminal incidents as they happen, and sends it to CSA. CSA processes this data for analysis and releases to the public every quarter.<br>
+</li>
+<li>Data limitation:
+<ol type="1">
+<li>By nature, occurrences data only records what was reported and recorded by Victoria Police, but not the entire population. That means there are incidents unreported, hence, unrecorded in the dataset.<br>
+</li>
+<li>This data includes multiple incident types, including those targeting businesses, cruelty towards animals, and others that might not be of direct interest to renters. However, these incidents also contribute to the area’s overall security, so I decided to include them.<br>
+</li>
+</ol></li>
+<li>Data privacy and Ethics:<br>
+The data has undergone aggregation and de-identification by CSA. Their explanatory note provides specific k-anonymity and other rules to handle data confidentiality <span class="citation" data-cites="csa_explanatory">(<a href="#ref-csa_explanatory" role="doc-biblioref">n.d.-b</a>)</span>.</li>
+</ul>
+<p><strong>Consumer Price Index</strong></p>
+<ul>
+<li>Source: ABS<br>
+</li>
+<li>Data type: Sample<br>
+</li>
+<li>Updated in: Dec-24<br>
+</li>
+<li>Latest version: Mar-25<br>
+</li>
+<li>Data collection methodology: ABS samples rental prices from real estate agents, State housing authorities, Centrelink and Department of Defence, and updates CPI quarterly.<br>
+</li>
+<li>Data limitation: The data does not account for different types of rental properties and factors that impact rental prices, such as number of units, number of bedrooms, dwelling types, dwelling size, etc.<br>
+</li>
+<li>Data privacy and Ethics: This is aggregated data on State level, so there is no risk of re-identification.</li>
+</ul>
+<p><strong>Estimated Resident Population</strong></p>
+<ul>
+<li>Source: ABS<br>
+</li>
+<li>Data type: Estimation<br>
+</li>
+<li>Updated in: Dec-24<br>
+</li>
+<li>Latest version: Dec-24<br>
+</li>
+<li>Data collection methodology: ABS estimates population based on adjusted 2021 Census and estimated birth, death and migration. The data is published quarterly.<br>
+</li>
+<li>Data limitation:
+<ol type="1">
+<li>This data is estimated by ABS and has not been revised and finalized. Therefore, it may contain errors. However, the impact is minimal for this analysis.<br>
+</li>
+<li>It is estimated at State level and does not account for local demographic variation.<br>
+</li>
+</ol></li>
+<li>Data privacy and Ethics: This is aggregated data, and ABS has no access to individual information as they depend on State authorities to aggregate data. Where Census data is involved, ABS complies with the Census and Statistics Act 1905 <span class="citation" data-cites="abs_privacy">(<a href="#ref-abs_privacy" role="doc-biblioref">2025c</a>)</span>.</li>
+</ul>
+<p><strong>Metropolitan Melbourne regions and their local government areas</strong></p>
+<ul>
+<li>Source: DELWP <span class="citation" data-cites="delwp">(<a href="#ref-delwp" role="doc-biblioref">DELWP (The State of Victoria Department of Environment &amp; Planning), 2017</a>)</span></li>
+<li>Data type: -<br>
+</li>
+<li>Updated in: 2017<br>
+</li>
+<li>Latest version: 2017<br>
+</li>
+<li>Data collection methodology: This is a pdf map of LGAs and their respective metropolitan region. I mapped them onto a dataframe.<br>
+</li>
+<li>Data limitation: The data is presented in a pdf map for human to read, and there is no official data set containing similar information.<br>
+</li>
+<li>Data privacy and Ethics: Not applicable</li>
+</ul>
+</section>
+<section id="calculation-and-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="calculation-and-assumptions">Calculation and assumptions</h3>
+<p><strong>Estimate Median weekly rent for 2024</strong></p>
+<p>Median weekly rent in 2024 is calculated by multiple 2021 Census median weekly rent by Rent growth rate, which is defined as percentage change in CPI between 2021 and 2024.</p>
+<p><span class="math display">\[
+2024\_median\_weekly\_rent = 2021\_median\_weekly\_rent * (1 + 2021\_CPI/2024\_CPI)
+\]</span></p>
+<p><em>Assumptions:</em> CPI is an estimate on State level, including both metropolitan and regional areas. I assume this is a good reflection of how rental price changes within Melbourne metropolitan areas.</p>
+<p><strong>Estimate Population for 2024</strong></p>
+<p>Population in 2024 is calculated by multiplying 2021 Census population by Population growth rate between 2021 and 2024. <span class="math display">\[
+2024\_population = 2021\_population * (1 + 2024\_ERP/2021\_population)
+\]</span></p>
+<p><em>Assumptions:</em> While 2024 estimated population exists, they are not presented by suburb. Therefore, I need to calculate the population growth rate between 2021 and 2024 by assuming the reliability of this population estimate.</p>
+<p><strong>Calculate Incident rate per 100 residents</strong></p>
+<p><span class="math display">\[
+incident\_rate = (incident\_counts/2024\_population)*100
+\]</span></p>
+<p><strong>Harmonising suburbs and local government areas between Census data and CSA data</strong></p>
+<p><em>Assumption:</em> There exists multiple suburbs that extend to more than one local government area (LGA) and metropolitan region, creating duplications when merging CSA data with Census data. This is because CSA data is presented by suburbs and LGAs, while Census data is presented by suburbs only. While this does not impact any calculation, it creates duplication during visualization.</p>
+<p>Therefore, where duplications among extended suburbs happen, I keep the first entry and assume that the suburb only belongs to one LGAs or metropolitan region.</p>
+</section>
+</section>
+<section id="question-4---data-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="question-4---data-transformation">Question 4 - Data transformation</h2>
+<p><strong>Import data</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code chunk shows how I imported data originally. However, due to data size exceeding github limit, I had to delete the GeoPackages and saved an alternative of just median_rent and population</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import GeoPackage data on Median weekly rent (G02) and Population (G01)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>geopath_2021_G02 <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/raw/Geopackage_2021_G02_VIC_GDA2020/G02_VIC_GDA2020.gpkg"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>median_rent <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(geopath_2021_G02, <span class="at">layer =</span> <span class="st">"G02_SAL_2021_VIC"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(SAL_CODE_2021, SAL_NAME_2021, Median_rent_weekly, geom) <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(sal_code_2021 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SAL29494"</span>, <span class="st">"SAL29797"</span>)))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>geopath_2021_G01 <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/raw/Geopackage_2021_G01_VIC_GDA2020/G01_VIC_GDA2020.gpkg"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(geopath_2021_G01, <span class="at">layer =</span> <span class="st">"G01_SAL_2021_VIC"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(SAL_CODE_2021, SAL_NAME_2021, Tot_P_M, Tot_P_F, Tot_P_P, geom) <span class="sc">|&gt;</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(sal_code_2021 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SAL29494"</span>, <span class="st">"SAL29797"</span>)))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(median_rent, <span class="st">"data/raw/census-median-rent.gpkg"</span>, <span class="at">delete_dsn =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(population, <span class="st">"data/raw/census-population.gpkg"</span>, <span class="at">delete_dsn =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Actual code that import GeoPackage data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>median_rent <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"data/raw/census-median-rent.gpkg"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"data/raw/census-population.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import CPI data from ABS</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cpi <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/raw/abs-cpi-by-capital city.xlsx"</span>), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sheet =</span> <span class="st">"Data1"</span>, <span class="at">skip =</span> <span class="dv">9</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">select</span>(<span class="st">`</span><span class="at">Series ID</span><span class="st">`</span>, A2331841F) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rename</span>(<span class="at">period =</span> <span class="st">`</span><span class="at">Series ID</span><span class="st">`</span>, <span class="at">rent_cpi =</span> A2331841F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import population data from ABS</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>erp_population <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/raw/abs-population.xlsx"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sheet =</span> <span class="st">"Table_5"</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the appropriate data range</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>erp_population <span class="ot">&lt;-</span> erp_population <span class="sc">|&gt;</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">select</span>(<span class="dv">1</span>, <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rename</span>(<span class="at">year =</span> <span class="st">`</span><span class="at">...1</span><span class="st">`</span>, <span class="at">population =</span> Victoria) <span class="sc">|&gt;</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">slice</span>(<span class="dv">59</span><span class="sc">:</span><span class="dv">76</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(<span class="fu">row_number</span>() <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="fu">n</span>())) <span class="sc">|&gt;</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">ifelse</span>(year <span class="sc">==</span> <span class="st">"September"</span>, <span class="dv">2024</span>, year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import crime data from CSA</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>incidents <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/raw/Data_Tables_LGA_Criminal_Incidents_Year_Ending_December_2024.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Table 03"</span>) <span class="sc">|&gt;</span> <span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Map LGA to their respective region</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>metro_lga_regions <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Inner Metro Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Melbourne"</span>, <span class="st">"Port Phillip"</span>, <span class="st">"Yarra"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Inner South East Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Stonnington"</span>, <span class="st">"Bayside"</span>, <span class="st">"Boroondara"</span>, <span class="st">"Glen Eira"</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Western Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Melton"</span>, <span class="st">"Brimbank"</span>, <span class="st">"Hobsons Bay"</span>, <span class="st">"Wyndham"</span>, <span class="st">"Moonee Valley"</span>, <span class="st">"Maribyrnong"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Northern Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Banyule"</span>, <span class="st">"Whittlesea"</span>, <span class="st">"Nillumbik"</span>, <span class="st">"Hume"</span>, <span class="st">"Moreland"</span>, <span class="st">"Darebin"</span>, <span class="st">"Mitchell"</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Eastern Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Manningham"</span>, <span class="st">"Whitehorse"</span>, <span class="st">"Knox"</span>, <span class="st">"Yarra Ranges"</span>, <span class="st">"Maroondah"</span>, <span class="st">"Monash"</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Southern Region"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Kingston"</span>, <span class="st">"Frankston"</span>, <span class="st">"Cardinia"</span>, <span class="st">"Casey"</span>, <span class="st">"Greater Dandenong"</span>, <span class="st">"Mornington Peninsula"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to dataframe</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>metro_lga<span class="ot">&lt;-</span> <span class="fu">enframe</span>(metro_lga_regions, <span class="at">name =</span> <span class="st">"region"</span>, <span class="at">value =</span> <span class="st">"lga"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> lga)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#write_csv(metro_lga, "data/processed/metro-lga.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Harmonize suburb name between census and CSA</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of duplicated suburbs (different suburbs with same name but different LGA)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>duplicated_suburb <span class="ot">&lt;-</span> median_rent <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(sal_code_2021, sal_name_2021) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">suburb_base_name =</span> <span class="fu">str_remove</span>(sal_name_2021, <span class="st">" </span><span class="sc">\\</span><span class="st">(.*Vic</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">)"</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">lga =</span> <span class="fu">str_extract</span>(sal_name_2021, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">().+(?= - Vic</span><span class="sc">\\</span><span class="st">.)"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">is_duplicated =</span> suburb_base_name <span class="sc">%in%</span> suburb_base_name[<span class="fu">duplicated</span>(suburb_base_name)],</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">suburb_full_name =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            is_duplicated,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">str_remove</span>(sal_name_2021, <span class="st">" - Vic</span><span class="sc">\\</span><span class="st">."</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">str_remove</span>(sal_name_2021, <span class="st">"</span><span class="sc">\\</span><span class="st">s*</span><span class="sc">\\</span><span class="st">(.*</span><span class="sc">\\</span><span class="st">)"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">|&gt;</span> <span class="fu">str_trim</span>())</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List of extend suburbs (the same suburb but extend to more than 1 LGA)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>extend_suburb <span class="ot">&lt;-</span> incidents <span class="sc">|&gt;</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(local_government_area, suburb_town_name) <span class="sc">|&gt;</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">across</span>(<span class="fu">c</span>(<span class="st">"suburb_town_name"</span>, <span class="st">"local_government_area"</span>), <span class="sc">~</span><span class="fu">str_trim</span>(.x)),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">suburb_lga_paste =</span> <span class="fu">paste0</span>(suburb_town_name, <span class="st">" ("</span>, local_government_area, <span class="st">")"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(duplicated_suburb, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"suburb_lga_paste"</span> <span class="ot">=</span> <span class="st">"suburb_full_name"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">is.na</span>(is_duplicated)) <span class="sc">|&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">is_extend =</span> suburb_town_name <span class="sc">%in%</span> suburb_town_name[<span class="fu">duplicated</span>(suburb_town_name)]) <span class="sc">|&gt;</span> </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(local_government_area, suburb_town_name, is_extend)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine to get the final suburb - LGA dictionary</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>suburb_lga_dict <span class="ot">&lt;-</span> duplicated_suburb <span class="sc">|&gt;</span> </span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>is_duplicated) <span class="sc">|&gt;</span> </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(extend_suburb, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"suburb_base_name"</span> <span class="ot">=</span> <span class="st">"suburb_town_name"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(duplicated_suburb <span class="sc">|&gt;</span> <span class="fu">filter</span>(is_duplicated)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">lga =</span> <span class="fu">coalesce</span>(lga, local_government_area)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>local_government_area) <span class="sc">|&gt;</span> </span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(median_rent <span class="sc">|&gt;</span> <span class="fu">select</span>(sal_code_2021, geom), <span class="at">by =</span> <span class="st">"sal_code_2021"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(metro_lga, <span class="at">by =</span> <span class="st">"lga"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">coalesce</span>(region, <span class="st">"Regional"</span>))</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#write_csv(suburb_lga_dict, "data/processed/suburb-lga-dict.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Estimate population in 2024 by suburb</strong></p>
+<p><strong>Estimate median rent in 2024 by suburb</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpi_2021 <span class="ot">&lt;-</span> cpi <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(period <span class="sc">==</span> <span class="fu">ymd</span>(<span class="st">"2021-12-01"</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(rent_cpi) <span class="sc">|&gt;</span> <span class="fu">pull</span>()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>cpi_2024 <span class="ot">&lt;-</span> cpi <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(period <span class="sc">==</span> <span class="fu">ymd</span>(<span class="st">"2024-12-01"</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(rent_cpi) <span class="sc">|&gt;</span> <span class="fu">pull</span>()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>est_median_rent <span class="ot">&lt;-</span> median_rent <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">median_rent_weekly =</span> <span class="fu">round</span>(median_rent_weekly<span class="sc">*</span>cpi_2024<span class="sc">/</span>cpi_2021))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Calculate crime rate</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate incidents by suburb</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>incidents_per_suburb <span class="ot">&lt;-</span> incidents <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2024</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(suburb_lga_dict, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"local_government_area"</span> <span class="ot">=</span> <span class="st">"lga"</span>, <span class="st">"suburb_town_name"</span> <span class="ot">=</span> <span class="st">"suburb_base_name"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(suburb_full_name) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">incident_counts =</span> <span class="fu">sum</span>(incidents_recorded))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine median, population and incidents and Calculate incident rate</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>census_csa <span class="ot">&lt;-</span> est_median_rent <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(est_pop, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"sal_name_2021"</span>, <span class="st">"sal_code_2021"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(suburb_lga_dict <span class="sc">|&gt;</span> <span class="fu">distinct</span>(sal_code_2021, suburb_full_name, region), </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">by =</span> <span class="st">"sal_code_2021"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(incidents_per_suburb, <span class="at">by =</span> <span class="st">"suburb_full_name"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">incident_counts =</span> <span class="fu">coalesce</span>(incident_counts, <span class="dv">0</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">incident_rate =</span> incident_counts<span class="sc">/</span>tot_p_p<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Downscale to metropolitan region</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>census_csa_metro <span class="ot">&lt;-</span> census_csa <span class="sc">|&gt;</span> </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"Regional"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(suburb_full_name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">sf_column_name =</span> <span class="st">"geom"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#st_write(census_csa_metro, "data/processed/census-csa-metro.gpkg", delete_dsn = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Merge Suburb boundary to Region boundary</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>region_boundary <span class="ot">&lt;-</span> census_csa_metro <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(region) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">region_geom =</span> <span class="fu">st_union</span>(geom))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#st_write(region_boundary, "data/processed/region-boundary.gpkg", delete_dsn = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="why-am-i-looking-at-rent-and-security" class="level2">
+<h2 class="anchored" data-anchor-id="why-am-i-looking-at-rent-and-security">Why am I looking at rent and security?</h2>
+<p>Since 18, I have moved 4 cities across Asia, Europe and now Australia, plus travelled to several countries in these continents. Uprooting my life every (other) year is fun, but it’s also a lot of work, especially when it comes to finding a place to stay. I often find myself looking for accomodation without having set foot in the country and understanding how it is like to live there.</p>
+<p>As a young female who mostly travels solo, one of my most important criteria is neighborhood safety. From my experience, more secured areas tend to be more expensive. However, I am a self-funded student, whose budget can only go so far, therefore, often find myself struggling to balance between security and affordability.</p>
+<p>That is why I think it would be an interesting attempt to validate my struggle by actually looking at the rent and crime rate in Melboure and answer the question: Is it really more expensive to live in safer areas? Or are we really paying more rent for better security?</p>
+</section>
+<section id="my-questions" class="level2">
+<h2 class="anchored" data-anchor-id="my-questions">My questions</h2>
+<p>I attempt to break down the big question of “Are we paying more rent for better security in Melbourne?” into smaller sections as follows:</p>
+<ol type="1">
+<li>How is the distribution of rent (measured by median weekly rent) across suburbs in Melbourne?</li>
+<li>How is the distribution of crime rate (measured by incident rate per 100 residents) across suburbs in Melbourne?</li>
+<li>Is there any correlation between rent and crime rate among Melbourne suburbs?</li>
+<li>As a student in Monash Clayton, what are the best suburbs that balance rent, security and approximity to campus?</li>
+</ol>
+<p>I measure rent by median weekly rent, and crime rate by annual incident rate per 100 residents. For example, if the suburb has a population of 100 and the crime rate is 2, there are 2 criminal incidents happening in a year.</p>
+</section>
+<section id="where-did-i-get-my-data" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-i-get-my-data">Where did I get my data?</h2>
+<p>Median weekly rent of all suburbs in Melbourne can be accessed via 2021 Census on Australia Bureau of Statistics (ABS) website <span class="citation" data-cites="census">(<a href="#ref-census" role="doc-biblioref">2021a</a>)</span>. I further adjusted this data to reflect rent in 2024 by calculating the percentage change in consumer price index (CPI) between 2021 and 2021 <span class="citation" data-cites="abs_cpi">(<a href="#ref-abs_cpi" role="doc-biblioref">2025a</a>)</span>.</p>
+<p>To calculate crime rate for each suburb, I collected data on number of incidents and offences in Melbourne in 2024 from Victoria’s Crime Statistics Agency (CSA), and population data of all suburbs from 2021 Census <span class="citation" data-cites="census csa_data">(<a href="#ref-census" role="doc-biblioref">2021a</a>; <a href="#ref-csa_data" role="doc-biblioref">2024</a>)</span>. Since population was in 2021, I further adjusted this data to reflect 2024 population by adding ABS’s annual percentage change in Victorian population <span class="citation" data-cites="erp">(<a href="#ref-erp" role="doc-biblioref">2025b</a>)</span>.</p>
+<p>Details on data collection and transformation can be found in Data details section.</p>
+</section>
+<section id="what-does-the-data-tell-me" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-the-data-tell-me">What does the data tell me?</h2>
+<p>Before investigating the relationship between rent and security, let’s have a look on how rent and crime rate distribute differently across Melbourne.</p>
+<section id="median-weekly-rent-across-melbourne" class="level3">
+<h3 class="anchored" data-anchor-id="median-weekly-rent-across-melbourne">Median weekly rent across Melbourne</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_35776064_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is surprising to me that the difference in rent across Melbourne is quite subtle, and there are few areas with outstandingly high rent.</p>
+<p>However, there still exists the inner and outer contrast, such that as distance from the CBD increases, especially towards northwest, northeast and southeast, the median weekly rent drops. Notably, the Western and further Northen and Southern regions are more affordable compared to the Inner South East and parts of Eastern closer to CBD. These areas are home to some of the most wealthiest population in Melbourne (e.g., Brighton, Toorak, Canterbury, Balwyn, etc.)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_35776064_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_35776064_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If we take a closer look at top 20 suburbs with the highest and lowest median rent, the result is consistent with the color distribution on the map. Most surburbs in the highest 20 group are from the CBD and Inner South East, while Western suburbs dominate the lowest 20 group.</p>
+</section>
+<section id="crime-rate-across-melbourne" class="level3">
+<h3 class="anchored" data-anchor-id="crime-rate-across-melbourne">Crime rate across Melbourne</h3>
+<p>I define crime rate as annual incident rate per 100 residents.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-incident-rate-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-incident-rate-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment4_35776064_files/figure-html/fig-incident-rate-map-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-incident-rate-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Incident Rate across Suburbs in Melbourne
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-incident-rate-map" class="quarto-xref">Figure&nbsp;1</a> shows the incident rate in each suburb in Melbourne, with the blue border separating regions. Overall, the outer areas of all region seem to have a similar range of low incident rate, with a few outliers concentrating in the Western region. However, it is hard to see how secured the central areas in this plot because it is too small. So, let’s zoom in a bit.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-incident-rate-map-zoomed" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-incident-rate-map-zoomed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment4_35776064_files/figure-html/fig-incident-rate-map-zoomed-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-incident-rate-map-zoomed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Incident Rate across Suburbs in inner Melbourne
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The CBD has the highest crime rate, with incident rates of all suburbs uniformly staying at the higher end. This is understandable as CBD is the center of commercial activities happen, and generally speaking, areas with a lot of people and activities are bound to have more incidents.</p>
+<p>We can also see a difference between the West and the East here. The West has a slightly deeper color, meaning that there are more crimes there, compared to the East.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-top-incident" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-top-incident-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment4_35776064_files/figure-html/fig-top-incident-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-top-incident-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Top 10 suburbs with the highest incident rate
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that there are a few outliers with significantly higher incident rate. These are mostly industrial or commercial areas, with little residents but high volumes of daytime activities, inflating the crime rate. For example, Somerton, Tottenham, Laverton North are all predominantly industrial, and Essendon Fields, Melbourne Airport and Moorabin Airport are transport hubs.</p>
+</section>
+<section id="rent-vs-crime-rate" class="level3">
+<h3 class="anchored" data-anchor-id="rent-vs-crime-rate">Rent VS Crime rate</h3>
+<p>From what we have seen, my initial hunch was that there was a small correlation between rent and crime rate, except for the CBD. Areas with the higher rent like Inner South East and Eastern regions happen to have lower incident rate as seen in <a href="#fig-incident-rate-map-zoomed" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<p>However, to my surprise, there is no correlation in any of the region!</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_35776064_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The majority of suburbs fall into the median weekly rent and median incident rate range for their respective region. And the points are distributed vertically across the incident rate, independent of median weekly rent.</p>
+</section>
+<section id="suburb-recommendation-for-students-at-monash-clayton" class="level3">
+<h3 class="anchored" data-anchor-id="suburb-recommendation-for-students-at-monash-clayton">Suburb recommendation for students at Monash Clayton</h3>
+<p>If there is no correlation between rent and security, why bother making a recommendation based on rent and security? It is because if budget is not a restriction for security, we’d better find an affordable and secured suburb to live in!</p>
+<p>I narrowed my analysis down to suburbs close to Clayton campus, as recommended on Monash website <span class="citation" data-cites="clayton">(<a href="#ref-clayton" role="doc-biblioref">n.d.-c</a>)</span>. I also added Caulfield because the commute from Caulfield and Clayton is very convenient, and it is a greater suburb to stay in if you want to enjoy a bit of student life.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-monash-recc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-monash-recc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment4_35776064_files/figure-html/fig-monash-recc-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monash-recc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: NA
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Based on <a href="#fig-monash-recc" class="quarto-xref">Figure&nbsp;4</a>, I think the best options that balance rent and security are Notting Hill, Clayton South, Clayton and Huntingdale. These suburbs offer good price and incident rate on the lower side. If your budget can stretch a bit more, Glen Waverley, Mount Waverley and Caulfield are great options for security. In my opinion, these suburbs have a lot more happening, hence, more fun to live in as well. Despite reasonable price, you might want to avoid Springvale and Oakleigh due to higher incident rate.</p>
+</section>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<p>In summary, my worry to pay higher rent for more secured suburbs is unnecessary because the analysis shows no correlation between rent and incident rate. However, there are a few useful insights we can take away from this analysis:</p>
+<ul>
+<li>Since there is no correlation between rent and security, we should all strive to find an affordable place with great security.</li>
+<li>Avoid living in the West if you can live in the South East and East because there are more crimes in the West.</li>
+<li>CBD is a fun place to hang out with your friends, but might not be a great place to live in because of the high rent and low security compared to surrounding suburbs.</li>
+<li>If you are a Monash Clayton student, consider Notting Hill, Clayton South, Clayton and Huntingdale as your top choices when looking for a new place to stay. If you have a bigger budget, you can consider Caulfield, Glen Waverley and Mount Waverley as well.</li>
+</ul>
+</section>
+<section id="whats-next-in-the-agenda" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next-in-the-agenda">What’s next in the agenda?</h2>
+<p>Beyond rent and security, my bigger question is: Which suburbs should I live in Melbourne? While I have found an answer from the security perspective in this analysis, there are a lot more to consider when it comes to looking for a place to stay, e.g., distance to key points of interest, availability of public transports, accessibility to amenities and entertainments, etc.</p>
+<p>Therefore, this analysis is a small part of my bigger project where I develop a more comprehensive scorecard to assess suburbs based on criteria commonly considered when people find their accomodation.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-census" class="csl-entry" role="listitem">
+Australian Bureau of Statistics. (2021a). <em>2021 <span>Census</span> <span>GeoPackages</span></em>. <a href="https://www.abs.gov.au/census/find-census-data/geopackages?release=2021&amp;geography=AUST&amp;table=G01&amp;gda=GDA2020">https://www.abs.gov.au/census/find-census-data/geopackages?release=2021&amp;geography=AUST&amp;table=G01&amp;gda=GDA2020</a>
+</div>
+<div id="ref-census_privacy" class="csl-entry" role="listitem">
+Australian Bureau of Statistics. (2021b). <em>2021 <span>Census</span> <span>Privacy</span> <span>Statement</span> <span></span> <span>Australian</span> <span>Bureau</span> of <span>Statistics</span></em>. Australian Bureau of Statistics. <a href="https://www.abs.gov.au/about/legislation-and-policy/privacy/privacy-abs/2021-census-privacy-statement">https://www.abs.gov.au/about/legislation-and-policy/privacy/privacy-abs/2021-census-privacy-statement</a>
+</div>
+<div id="ref-abs_cpi" class="csl-entry" role="listitem">
+Australian Bureau of Statistics. (2025a). <em>Consumer <span>Price</span> <span>Index</span>, <span>Australia</span>, <span>March</span> <span>Quarter</span> 2025 <span></span> <span>Australian</span> <span>Bureau</span> of <span>Statistics</span></em>. Australian Bureau of Statistics. <a href="https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release">https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release</a>
+</div>
+<div id="ref-erp" class="csl-entry" role="listitem">
+Australian Bureau of Statistics. (2025b). <em>National, state and territory population, <span>December</span> 2024 <span></span> <span>Australian</span> <span>Bureau</span> of <span>Statistics</span></em>. Australian Bureau of Statistics. <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release">https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release</a>
+</div>
+<div id="ref-abs_privacy" class="csl-entry" role="listitem">
+Australian Bureau of Statistics. (2025c). <em>Website privacy, copyright and disclaimer <span></span> <span>Australian</span> <span>Bureau</span> of <span>Statistics</span></em>. Australian Bureau of Statistics. <a href="https://www.abs.gov.au/website-privacy-copyright-and-disclaimer">https://www.abs.gov.au/website-privacy-copyright-and-disclaimer</a>
+</div>
+<div id="ref-csa_copyright" class="csl-entry" role="listitem">
+Crime Statistics Agency. (n.d.-a). <em>Copyright</em>. Retrieved June 1, 2025, from <a href="https://www.crimestatistics.vic.gov.au/copyright">https://www.crimestatistics.vic.gov.au/copyright</a>
+</div>
+<div id="ref-csa_explanatory" class="csl-entry" role="listitem">
+Crime Statistics Agency. (n.d.-b). <em>Explanatory notes</em>. Retrieved June 1, 2025, from <a href="https://www.crimestatistics.vic.gov.au/about-the-data/explanatory-notes">https://www.crimestatistics.vic.gov.au/about-the-data/explanatory-notes</a>
+</div>
+<div id="ref-csa_data" class="csl-entry" role="listitem">
+Crime Statistics Agency. (2024). <em>Download data</em> [Publication]. <a href="https://www.crimestatistics.vic.gov.au/crime-statistics/latest-victorian-crime-data/download-data">https://www.crimestatistics.vic.gov.au/crime-statistics/latest-victorian-crime-data/download-data</a>
+</div>
+<div id="ref-delwp" class="csl-entry" role="listitem">
+DELWP (The State of Victoria Department of Environment, W., Land, &amp; Planning). (2017). <em>Metropolitan <span>Melbourne</span> regions</em>. <a href="https://www.planning.vic.gov.au/__data/assets/pdf_file/0026/628361/plan-melbourne-map-metro-melbourne-regions.pdf">https://www.planning.vic.gov.au/__data/assets/pdf_file/0026/628361/plan-melbourne-map-metro-melbourne-regions.pdf</a>
+</div>
+<div id="ref-clayton" class="csl-entry" role="listitem">
+Monash University. (n.d.-c). <em>Clayton <span>Campus</span> - <span>Accommodation</span></em>. Retrieved June 1, 2025, from <a href="https://www.monash.edu/accommodation/students/off-campus-support/clayton-campus">https://www.monash.edu/accommodation/students/off-campus-support/clayton-campus</a>
+</div>
+</div>
+</section>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5:</h2>
+<p><em>Tell us about parts of your data processing or analysis that weren’t “sexy” and wouldn’t typically be included in a blog post. (e.g.&nbsp;Was their any data drudgery or time intensive wrangling? Were there any repetitive tasks or manual tasks? If it was easy, describe what made it easy?)</em></p>
+<p>The most challenging part during data processing was aligning suburb names between the GeoPackages and CSA datasets to calculate incident rates. Initially, I assumed that since both datasets were at the suburb level, merging would be straightforward.</p>
+<p>However, I soon discovered that there are several different suburbs with the same name, and suburbs that extend to more than 1 LGA. While the primary key of GeoPackages data is suburb level, those of CSA data are suburb and LGA. That meant I had to figure out which suburb belongs to which LGA in order to merge these two data sources together.</p>
+<p>With no official mapping available, I had to create one myself. I considered two approaches: (1) calculating geographical overlaps using the spatial data, or (2) manually deriving logical patterns between the datasets. While the first solution sounded comprehensive, it was so computationally heavy that my laptop kept crashing. This left me with the second solution and the next 5 hours mapping the logics and navigating several edge cases to finally figure out the best way to merge these data using a suburb - LGA dictionary. While some missing data exists in LGAs for certain suburbs, the dictionary was sufficient enough to proceed with the analysis.</p>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6:</h2>
+<p><em>Were there any challenges that you faced in conducting this analysis. These may take the form of data limitations or coding challenges? (e.g.&nbsp;Was there anything in your analysis that you were not anticipating when you started? Did you have to change your intended scope? Did you need to master a new skill? Were there any problems you were proud of solving?)</em></p>
+<p>As I’m still new to Melbourne, I lack the knowledge of Melbourne suburbs to make a meaningful intepretation of the data. This was even a bigger challenge when my initial scope was the entire Victoria. I decided to downscope the analysis to Metropolitan Melbourne to make it more relevant to my personal needs, and I had to research a lot of different areas in Melbourne to deepen my insights.</p>
+<p>Map visualization is another challenging aspect. I attempted to plot choropleth map of Melbourne suburbs, enriching with region boundaries. However, it was hard for me to figure out the right color scale and combination that make these map easy to the eyes, while highlighting the regional differences.</p>
+<p>An unexpected challenge is about the volume of data documentation that goes with this analysis. I used quite a few data sources and performed a few computations with assumptions in the analysis. However, I was overly confident that it would not take long for me to document everything on data collection, processing, data dictionary, etc. because I remembered all the details and reasonings by heart. Thus, I grossly underestimated the amount of time I needed to document my data collection, limitation, and processing. It’s a lesson learnt for me to document things as I go, instead of leaving it to the last minute.</p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7:</h2>
+<p><em>Tell us about any imperfect parts of your work and how you would like to expand or improve this analysis in future? Be clear about any limitations or aspects of your analysis that fell beyond scope.</em></p>
+<p>Despite my effort to take the choropleth plots look good, I am still unhappy with the way they look. I was looking for something more clear, elegant and consistent across two plots, but time limitation did not allow.</p>
+<p>As mentioned at the end of my blog, my core question remains: <em>Which suburb should I live in Melbourne?</em> I’d love to develop a scorecard that assess Melbourne suburb based on different criteria, such as public transport, distances to key destination (e.g., university, CBD), the number of shops and cafes nearby, etc. Ideally, this would involve a data pipeline that scrapes live data, stores it in a database, and powers a web app where users can set their preferences to get personalized suburb recommendations.</p>
+<p>This would be a very interesting project to pursue, yet a very challenging one time-wise and financial-wise. This project will require significant time and effort to gather and process data. Additionally, spatial data on businesses is not freely available as APIs from Google Map and Apple Map are charged. Even hosting a database comes with limitations on free tiers.</p>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8:</h2>
+<p><em>Also submit 4 earlier versions of your assignment that show your iterative process. These should be your messy versions and include exploratory code. We recommend you save these files as you progress through your assignment. Provide a short overview for markers of what you fixed/learnt/improved/changed between each file. (If you are comfortable with GitHub you may submit your Github repo, but please refer to individual commits.)</em></p>
+<p>ca48517 (HEAD -&gt; main) add reflection 2783b81 add readme.md d4b1411 add data dictionary cd3aca1 data description and assumption added 6b68e01 data collection done 0897554 finish the blog post 88a8931 beautify the plots 9ba993f scale down to metro area, add more graph specific to clayton 78385f1 add metropolitan regions 42e537e merge census and csa, calculate crime rate 59765fd finish harmonizing suburb names f9cbf9e import raw data a3d5cd0 (origin/main) add r project f6adc3f initial commit</p>
+</section>
+</div>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
